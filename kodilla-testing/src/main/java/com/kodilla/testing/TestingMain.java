@@ -1,31 +1,20 @@
 package com.kodilla.testing;
-import com.kodilla.testing.user.SimpleUser;
-import com.kodilla.testing.Calculator.Calculator;
+import com.kodilla.testing.collection.OddNumbersExterminator;
+
+import java.util.LinkedList;
 
 public class TestingMain {
     public static void main(String[] args) {
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
+        LinkedList<Integer> all = new LinkedList<>();
+        all.add(2);
+        all.add(3);
+        all.add(5);
+        all.add(6);
 
-        String result = simpleUser.getUsername();
+        OddNumbersExterminator exterminator = new OddNumbersExterminator();
+        System.out.println(exterminator.exterminate(all));
 
-        if (result.equals("theForumUser")) {
-            System.out.println("test OK");
-        } else {
-            System.out.println("Error!");
-        }
 
-        System.out.println("Pierwszy test jednostkowy:");
-
-        Calculator calculator = new Calculator();
-        int resultAdd = calculator.add(5, 40);
-        int resultSub = calculator.subtract(33, 44);
-
-        if (resultAdd == 45 && resultSub == -11) {
-            System.out.println("test OK");
-        } else {
-            System.out.println("Error!!");
-        }
 
     }
 }
-
