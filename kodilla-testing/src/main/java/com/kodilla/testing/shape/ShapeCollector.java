@@ -11,29 +11,42 @@ public class ShapeCollector {
     private ArrayList<Shape> geometricFigures = new ArrayList<>();
 
     public void addFigure(Shape shape) {
+        geometricFigures.add(shape);
 
     }
 
     public int getFiguresQuantity() {
-        return 100;
+        return geometricFigures.size();
     }
 
     public boolean removeFigure(Shape shape) {
+        boolean result = false;
+        if(geometricFigures.contains(shape)) {
+            geometricFigures.remove(shape);
+            result = true;
+        }
         return true;
 
     }
 
     public Shape getFigure(int i) {
-        return null;
+        Shape shape = null;
+        if(i >= 0 && i < geometricFigures.size() ) {
+            shape = geometricFigures.get(i);
+        }
+        return shape;
 
     }
 
     public String showFigures() {
-        return null;
+        String result = null;
+        Shape circle = new Circle(5);
+        result = circle.getShapeName("Circle");
+        {
+
+            return result;
+        }
     }
-
-
-
 }
 
 
