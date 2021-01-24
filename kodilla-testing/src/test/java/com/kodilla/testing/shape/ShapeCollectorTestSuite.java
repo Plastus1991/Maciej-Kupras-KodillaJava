@@ -69,7 +69,7 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    void CircleField() {
+    void circleField() {
         //Give
         Shape circle = new Circle(8);
 
@@ -82,7 +82,7 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    void SquareField() {
+    void squareField() {
         //Give
         Shape square = new Square(5);
 
@@ -96,7 +96,7 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    void TriangleField() {
+    void triangleField() {
         //Give
         Shape triangle = new Triangle(4,2);
 
