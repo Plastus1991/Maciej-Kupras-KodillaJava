@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 @ExtendWith(MockitoExtension.class)
 class BookDirectoryTestSuite {
@@ -61,7 +61,7 @@ class BookDirectoryTestSuite {
     void testListBooksWithConditionMoreThan20() {
         // Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-        List<Book> resultListOf0Books = new ArrayList<Book>();
+        List<Book> resultListOf0Books = new ArrayList<>();
         List<Book> resultListOf15Books = generateListOfNBooks(15);
         List<Book> resultListOf40Books = generateListOfNBooks(40);
         when(libraryDatabaseMock.listBooksWithCondition(anyString()))
@@ -101,7 +101,7 @@ class BookDirectoryTestSuite {
     void testListBooksInHandsOfAnyOneBooks() {
         // Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-        List<LibraryUser> user = new ArrayList<>();
+
         LibraryUser libraryUser1 = new LibraryUser("FirstName1", "LastName1", "91040415666");
         LibraryUser libraryUser2 = new LibraryUser("FirstName2", "LastName2", "91220415666");
         LibraryUser libraryUser3 = new LibraryUser("FirstName3", "LastName3", "91220415666");
@@ -115,17 +115,15 @@ class BookDirectoryTestSuite {
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUser3)).thenReturn(resultListOf5Books);
 
         //When
+
         List<Book> theListOfBooks0 = bookLibrary.listBooksInHandsOf(libraryUser1);
         List<Book> theListOfBooks1 = bookLibrary.listBooksInHandsOf(libraryUser2);
         List<Book> theListOfBooks5 = bookLibrary.listBooksInHandsOf(libraryUser3);
 
         //Then
         assertEquals(0, theListOfBooks0.size());
-        assertEquals(1, resultListOf1Books.size());
-        assertEquals(5, resultListOf5Books.size());
-
-
-
+        assertEquals(1, theListOfBooks1.size());
+        assertEquals(5, theListOfBooks5.size());
 
     }
 

@@ -24,18 +24,25 @@ public class BookLibrary {
         List<Book> bookList = new ArrayList<Book>();
         if (libraryUser.getFirstname().equals("FirstName1")) {
             List<Book> resultList = libraryDatabase.listBooksInHandsOf(libraryUser);
+            bookList = resultList;
         }
         if (libraryUser.getFirstname().equals("FirstName2")) {
             List<Book> resultList = libraryDatabase.listBooksInHandsOf(libraryUser);
+            bookList = resultList;
         }
         if (libraryUser.getFirstname().equals("FirstName3")) {
             List<Book> resultList = libraryDatabase.listBooksInHandsOf(libraryUser);
-
-
             bookList = resultList;
-        }
-            return bookList;
+
+
 
         }
+        return bookList;
     }
+}
+
+
+
+
+
 
