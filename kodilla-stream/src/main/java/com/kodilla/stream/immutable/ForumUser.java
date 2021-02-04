@@ -1,5 +1,7 @@
 package com.kodilla.stream.immutable;
 
+import java.sql.SQLOutput;
+
 public final class ForumUser {
 
     private final String userName;
@@ -17,4 +19,5 @@ public final class ForumUser {
     public String getRealName() {
         return realName;
     }
+    
 }

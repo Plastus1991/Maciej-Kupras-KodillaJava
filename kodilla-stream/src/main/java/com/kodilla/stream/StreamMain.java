@@ -1,22 +1,27 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.beautifier.PoemDecorator;
-import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.iterate.NumbersGenerator;
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
 
-import java.util.Locale;
+import java.util.Calendar;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String[] args) {
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
 
-        poemBeautifier.beautify("ttt",(a)->"ABC" + a + "ABC");
-        poemBeautifier.beautify("tarala", (a) -> a.toUpperCase(Locale.ROOT));
-        poemBeautifier.beautify("ABCDEFG", (a) -> a.toLowerCase(Locale.ROOT));
-        poemBeautifier.beautify("tEkST", (a) -> a.toLowerCase(Locale.ROOT) + "XYZ");
+        int year = Calendar.getInstance().get(Calendar.YEAR);
 
-        System.out.println("Using Stream to generate even numbers from 1 to 20");
-        NumbersGenerator.generateEven(20);
+        Forum forum = new Forum();
+        Map<Integer, ForumUser> mapOfUser = forum.getUserList().stream()
+                .filter(user -> user.getSex() == 'M')
+                .filter(user -> (year - user.getDateOfBirth().getYear()) >= 20)
+                .filter(user -> user.getPostCount() >=1)
+                .collect(Collectors.toMap(ForumUser::getUserID, user-> user));
+
+        mapOfUser.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
+                .forEach(System.out::println);
 
     }
 }
