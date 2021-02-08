@@ -14,7 +14,7 @@ public class Forum {
         userList.add(new ForumUser(888435678, "User3", 'M', "1979-08-25", 0  ));
         userList.add(new ForumUser(4335678, "User4", 'F', "1959-11-25", 14  ));
         userList.add(new ForumUser(433588678, "User5", 'M', "1989-06-25", 121  ));
-        userList.add(new ForumUser(1678, "User6", 'M', "2000-08-25", 11  ));
+        userList.add(new ForumUser(1678, "User6", 'M', "2001-01-25", 11  ));
 
     }
     public List<ForumUser> getUserList() {
